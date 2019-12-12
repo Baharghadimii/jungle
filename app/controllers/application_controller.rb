@@ -6,12 +6,15 @@ class ApplicationController < ActionController::Base
   private
 
   def cart
+    raise @cart
     @cart ||= cookies[:cart].present? ? JSON.parse(cookies[:cart]) : {}
   end
   helper_method :cart
 
   def enhanced_cart
     @enhanced_cart ||= Product.where(id: cart.keys).map {|product| { product:product, quantity: cart[product.id.to_s] } }
+    puts "here"
+  
   end
   helper_method :enhanced_cart
 
@@ -19,7 +22,6 @@ class ApplicationController < ActionController::Base
     enhanced_cart.map {|entry| entry[:product].price_cents * entry[:quantity]}.sum
   end
   helper_method :cart_subtotal_cents
-
 
   def update_cart(new_cart)
     cookies[:cart] = {
