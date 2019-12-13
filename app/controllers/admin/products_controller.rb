@@ -1,5 +1,7 @@
 class Admin::ProductsController < ApplicationController
-
+  http_basic_authenticate_with name: ENV["HTTP_BASIC_USER"],
+  password: ENV["HTTP_BASIC_PASSWORD"],
+  if: -> { ENV["HTTP_BASIC_PASSWORD"].present? }, except: :index
   def index
     @products = Product.order(id: :desc).all
   end
@@ -10,7 +12,6 @@ class Admin::ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-
     if @product.save
       redirect_to [:admin, :products], notice: 'Product created!'
     else
@@ -19,7 +20,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def destroy
-    @product = Product.find params[:id]
+    @product = Product.find(params[:id])
     @product.destroy
     redirect_to [:admin, :products], notice: 'Product deleted!'
   end
