@@ -1,16 +1,12 @@
-
-<% if enhanced_cart.length == 0 %>
-<div class="alert alert-info" role="alert">
-  <p>Your shopping cart is empty!  <%= link_to 'Back', :back %></p>
-
-</div>
-<% else %>
 <section class="cart-show">
-
-  <header class="page-header"> 
-     <h1>My Cart</h1>
+  <header class="page-header">
+    <h1>My Cart</h1>
   </header>
-
+<% if enhanced_cart.size == 0  %>
+  <div class="alert alert-info" role="alert">
+    <p>Your shopping cart is empty! Start shopping <%= link_to 'here', :back %></p>
+  </div>
+  <% else %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -38,7 +34,6 @@
       </tfoot>
     </table>
   </div>
-
   <div class="row">
     <div class="col-xs-12">
       <%= form_tag orders_path do %>
@@ -49,12 +44,11 @@
           data-name="Jungle"
           data-description="Khurram Virani's Jungle Order"
           data-locale="auto"
-          data-email="kvirani@gmail.com"
+          data-email="hildamatilda@"
           data-currency="cad">
         </script>
       <% end %>
     </div>
   </div>
-
+  <% end %>
 </section>
-<% end %>
