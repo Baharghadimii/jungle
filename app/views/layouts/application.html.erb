@@ -11,6 +11,12 @@
   <%= render 'layouts/top_nav' %>
 
   <main class="container">
+  <% if @sale = Sale.where('starts_on < ? AND ends_on > ?', Date.current, Date.current)%>
+  <p class='alert alert-info'>
+  <%= @sale[0][:name] %> sale is now on with 
+  <%= @sale[0][:percent_off]%>% off! Enjoy...!
+  </p>
+  <%end%>
     <%= yield %>
   </main>
 
