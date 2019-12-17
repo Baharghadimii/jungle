@@ -1,36 +1,36 @@
 require 'rails_helper'
 
 RSpec.describe Product, type: :model do
-  describe "validations" do
-    it 'Should save the product when all four fields are set' do
-      @category = Category.create(name: "something")
-      @product = Product.create(name: "something", price: 20,quantity: 2, category: @category)
-      @product.save!
 
-      expect(@product).to be_valid
-    end
-    it 'Should throw an error if name is not set' do
-      @category = Category.create(name: "something")
-      @product = Product.create(price: 20,quantity: 2, category: @category)
-  
-      expect(@product.errors.full_messages).to include("Name can't be blank")
-    end
-    it 'Should throw an error if price is not set' do
-      @category = Category.create(name: "something")
-      @product = Product.create(name: "something", quantity: 2, category: @category)
-
-      expect(@product.errors.full_messages).to include("Price is not a number")
-    end
-    it 'Should throw an error if quantity is not set' do
-      @category = Category.create(name: "something")
-      @product = Product.create(name: "something",price: 20, category: @category)
-
-      expect(@product.errors.full_messages).to include("Quantity can't be blank")
-    end
-    it 'Should throw an error if category is not set' do
-      @product = Product.create(name: "something",price: 20, quantity: 2)
-
-      expect(@product.errors.full_messages).to include("Category can't be blank")
-    end
+  before(:each) do
+    @product = Product.new
+    @category = Category.new name: 'Something'
   end
+
+  it 'Should save when all four fields are set' do
+    @full_product = Product.new(name: 'something', price: 100, quantity: 5, category: @category)
+    @full_product.save!
+    expect(@full_product).to be_valid
+  end
+
+  it 'Should throw an error when name is not set' do
+    expect(@product).to_not be_valid
+    expect(@product.errors.messages[:name]).to include('can\'t be blank')
+  end
+
+  it 'Should throw an error when price is not set' do
+    expect(@product).to_not be_valid
+    expect(@product.errors.messages[:price]).to include('can\'t be blank')
+  end
+
+  it 'Should throw an error when quantity is not set' do
+    expect(@product).to_not be_valid
+    expect(@product.errors.messages[:quantity]).to include('can\'t be blank')
+  end
+
+  it 'Should throw an error when category is not set' do
+    expect(@product).to_not be_valid
+    expect(@product.errors.messages[:category]).to include("can\'t be blank")
+  end
+  
 end
