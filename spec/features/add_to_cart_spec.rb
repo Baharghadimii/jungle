@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "ProductDetails", type: :feature, js: true do
+RSpec.feature "AddToCarts", type: :feature do
   before :each do
     @category = Category.create! name: 'Apparel'
 
@@ -14,15 +14,13 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
       )
     end
   end
-  # scenario "They can click on each product and see the details" do
-  #   # ACT
-  #   visit root_path
+  scenario "They can click on Add button and cart number changes" do
+    visit root_path
 
-  #   first('a.btn.btn-default').click
+    first("button.btn.btn-primary").click
+    expect(page).to have_content("My Cart (1)")
+    all("button.btn.btn-primary")[1].click
+    expect(page).to have_content("My Cart (2)")
 
-  #   # save_screenshot "product_details.png"
-
-  #   expect(page).to have_css 'img.main-img'
-  # end
-
+  end
 end
