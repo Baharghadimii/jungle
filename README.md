@@ -2,6 +2,12 @@
 
 Jungle is a mini e-commerce application built with Rails 4.2 for the purposes of teaching Rails by example. This project was not just about learning a new language, ecosystem and framework. It was moreso a simulation of the real world, as I inherited an existing code base in a language / framework that I was not comfortable with.
 
+## Final Product
+
+!["Product Cataloge"](https://github.com/Baharghadimii/jungle/blob/master/app/docs/Product_Catalog.png?raw=true)
+!["Product Cataloge"](https://github.com/Baharghadimii/jungle/blob/master/app/docs/Product_Catalog_Continued.png?raw=true)
+!["Product Details"](https://github.com/Baharghadimii/jungle/blob/master/app/docs/Product_Details_Page.png?raw=true)
+!["Purchase Page"](https://github.com/Baharghadimii/jungle/blob/master/app/docs/Purchase_Window.png?raw=true)
 
 ## Setup
 
