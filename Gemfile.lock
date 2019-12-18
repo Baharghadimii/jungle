@@ -115,7 +115,7 @@ GEM
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
-    pg (1.1.4)
+    pg (0.21.0)
     pkg-config (1.1.7)
     poltergeist (1.18.1)
       capybara (>= 2.1, < 4)
@@ -244,7 +244,7 @@ DEPENDENCIES
   jquery-rails
   money-rails
   newrelic_rpm
-  pg (= 1.1.4)
+  pg (~> 0.21)
   poltergeist
   puma
   quiet_assets

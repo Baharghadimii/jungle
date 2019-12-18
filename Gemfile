@@ -3,7 +3,8 @@ ruby "2.3.5"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
-# gem 'pg'
+gem 'pg', '~> 0.21'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -46,13 +47,13 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-group :production do
-  gem 'newrelic_rpm'
-  gem 'rails_12factor'
-  gem 'pg', '1.1.4'
-end
 group :test do
   gem 'capybara'
   gem 'poltergeist'
   gem 'database_cleaner'
+end
+group :production do
+  gem 'newrelic_rpm'
+  gem 'rails_12factor'
+  gem 'pg', '~> 0.21'
 end
