@@ -1,4 +1,6 @@
 class Admin::SalesController < ApplicationController
+  http_basic_authenticate_with name: ENV["HTTP_BASIC_USER"].to_s, password: ENV["HTTP_BASIC_PASSWORD"].to_s, except: :index
+  
 
   def index   
     @sales = Sale.all  
