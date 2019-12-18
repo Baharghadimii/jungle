@@ -3,7 +3,7 @@ ruby "2.3.5"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
-gem 'pg'
+# gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -34,6 +34,7 @@ gem 'faker'
 # gem 'capistrano-rails', group: :development
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'sqlite3', '1.4.1'
   gem 'rspec-rails', '~> 3.5'
   gem 'byebug'
   gem 'quiet_assets'
@@ -48,6 +49,7 @@ end
 group :production do
   gem 'newrelic_rpm'
   gem 'rails_12factor'
+  gem 'pg', '1.1.4'
 end
 group :test do
   gem 'capybara'
