@@ -38,7 +38,7 @@ Product.destroy_all
 cat1.products.create!({
   name:  'Men\'s Classy shirt',
   description: Faker::Hipster.paragraph(4),
-  image: open('https://image.shutterstock.com/image-photo/colorful-flower-on-dark-tropical-260nw-721703848.jpg'),
+  image: open('s3://myjungleapp/apparel1.jpg'),
   quantity: 10,
   price: 64.99
 })
