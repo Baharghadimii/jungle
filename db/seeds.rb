@@ -46,7 +46,7 @@ cat1.products.create!({
 cat1.products.create!({
   name:  'Women\'s Zebra pants',
   description: Faker::Hipster.paragraph(4),
-  image: 'http://s3.amazonaws.com/myjungleapp/apparel2.jpg',
+  image: 'http://myjungleapp.s3.ca-central-1.amazonaws.com/apparel2.jpg',
   quantity: 18,
   price: 124.99
 })
