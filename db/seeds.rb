@@ -38,7 +38,7 @@ Product.destroy_all
 cat1.products.create!({
   name:  'Men\'s Classy shirt',
   description: Faker::Hipster.paragraph(4),
-  image: 's3://myjungleapp/apparel1.jpg',
+  image: 'https://myjungleapp.s3.ca-central-1.amazonaws.com/apparel1.jpg',
   quantity: 10,
   price: 64.99
 })
@@ -46,7 +46,7 @@ cat1.products.create!({
 cat1.products.create!({
   name:  'Women\'s Zebra pants',
   description: Faker::Hipster.paragraph(4),
-  image: open_asset('apparel2.jpg'),
+  image: 'http://s3.amazonaws.com/myjungleapp/apparel2.jpg',
   quantity: 18,
   price: 124.99
 })
