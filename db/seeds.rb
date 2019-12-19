@@ -38,7 +38,7 @@ Product.destroy_all
 cat1.products.create!({
   name:  'Men\'s Classy shirt',
   description: Faker::Hipster.paragraph(4),
-  image: 'http://s3.amazonaws.com/myjungleapp/apparel1.jpg',
+  image: open('https://image.shutterstock.com/image-photo/colorful-flower-on-dark-tropical-260nw-721703848.jpg'),
   quantity: 10,
   price: 64.99
 })
@@ -127,7 +127,7 @@ cat3.products.create!({
 cat3.products.create!({
   name:  'Red Bookshelf',
   description: Faker::Hipster.paragraph(4),
-  image: open_asset('furniture3.jpg'),
+  image: open('https://image.shutterstock.com/image-photo/colorful-flower-on-dark-tropical-260nw-721703848.jpg'),
   quantity: 23,
   price: 2_483.75
 })
