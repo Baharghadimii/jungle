@@ -127,7 +127,7 @@ cat3.products.create!({
 cat3.products.create!({
   name:  'Red Bookshelf',
   description: Faker::Hipster.paragraph(4),
-  image: 'https://image.shutterstock.com/image-photo/colorful-flower-on-dark-tropical-260nw-721703848.jpg',
+  image: 'https://jungle-pics.s3-us-west-2.amazonaws.com/clapperboard.png',
   quantity: 23,
   price: 2_483.75
 })
